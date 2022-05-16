@@ -20,7 +20,8 @@ let commandList = [
   { id: 3, text: "update any TODO" },
   { id: 4, text: "show pending TODO" },
   { id: 5, text: "show done TODO" },
-  {id:6, text:"add new TODO"}
+  {id:6, text:"add new TODO"},
+  {id:7, text:"edit task"}
 ];
 
 //----------FUNCTIONS-------------//
@@ -69,6 +70,14 @@ let updateTodo = function(){
 
 }
 
+//editing tasks
+let editTodo = function(num, text){
+
+};
+
+// create function to edit any item by order number
+// the function takes 2 Arguments ==> the first Argument is item order number and the Second Argument is new item value
+
 
 
 //----------------INTRO PART---------------//
@@ -114,6 +123,10 @@ switch (input) {
     let taskInput = prompt("Enter a new task: ");
     insertTodo(taskInput);
     break;
+
+    case 7: //editing any task
+
+    editTodo();
 
     default:
     console.log("Enter a command number");
