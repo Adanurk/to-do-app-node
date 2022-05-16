@@ -74,11 +74,11 @@ let updateTodo = function (x) {
 };
 
 //editing tasks
-let editTodo = function (num, text) {
-  let index = todoList.findIndex((el) => el.id === num);
-  
-  console.log(index);
-};
+let editTodo = function (taskEdit, taskText) {
+    let index = todoList.findIndex((el) => el.id === taskEdit);
+    console.log(index);
+    todoList[index].text = taskText;
+  };
 
 // create function to edit any item by order number
 // the function takes 2 Arguments ==> the first Argument is item order number and the Second Argument is new item value
@@ -136,21 +136,13 @@ switch (input) {
     break;
 
   case 7: //editing any task
-
     console.table(todoList);
     let taskEdit = +prompt("Enter the id of task you want to change: ");
     let taskText = prompt("Enter the new task: ");
-
-    let editTodo = function (taskEdit, taskText) {
-        let index = todoList.findIndex((el) => el.id === taskEdit);
-        console.log(index);
-        todoList[index].text = taskText;
-      };
-
-      editTodo(taskEdit,taskText);
-      console.table(todoList);
-
-  default:
+    editTodo(taskEdit,taskText);
+    console.table(todoList);
+    
+    default:
     console.log("Enter a command number");
     break;
 }
