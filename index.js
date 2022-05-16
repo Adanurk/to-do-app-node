@@ -1,55 +1,59 @@
-const prompt = require("prompt-sync")({sigint:true});
+const prompt = require("prompt-sync")({ sigint: true });
 
-//npm i inquirer
-//bununla user secim yapabiliyor
-
+//npm i inquirer or
 //prompt-sync
 //npm i prompt sync
 
-//show todo list
-//delete any todo
-//update any todo
-//show pending todos
-//show done todos
-
+//-----------------------------------------------------------------//
 
 //our variables
 
 let todoList = [
-    {id:1, text:"jogging", done:false}, 
-    {id:2, text:"cleaning",done:false},
-    {id:3, text:"live code", done:false}
+  { id: 1, text: "jogging", done: false },
+  { id: 2, text: "cleaning", done: false },
+  { id: 3, text: "live code", done: false },
 ];
 
 let commandList = [
-    {id:1, text:"show to do list"}, 
-    {id:2, text:"delete any todo"},
-    {id:3, text:"update any todo"}, 
-    {id:4, text:"show pending todos"}, 
-    {id:4, text:"show done todos"}
+  { id: 1, text: "show to do list" },
+  { id: 2, text: "delete any TODO" },
+  { id: 3, text: "update any TODO" },
+  { id: 4, text: "show pending TODO" },
+  { id: 4, text: "show done TODO" },
 ];
 
-//enter a command
+//printing command list
 
-let input = prompt("Enter a command: ");
+for (const item of commandList) {
+    console.log(`${item["id"]}: ${item["text"]}`);
+}
+
+//entering a command
+
+let input = +prompt("Enter a command number: ");
 console.log(input);
 
-
 switch (input) {
-    case "show to do list":
-        console.log(todoList);
-        break
-    case "delete any todo":
+    case 1: //show to do list
+    for (const item of todoList) {
+      console.log(`Task ${item["id"]}: ${item["text"]}`);
+    }
+    break;
+    case 2: //delete any todo
+    let del = +prompt("Enter the number of task you want to delete: ");
+    let deleteTodo = function(num){
+        let ourVal = 
 
+    }
 
-    break
-    case "update any todo":
-
-    break
-    case "show pending todos":
-
-    break
-    case "show done todos":
-
-    break
+    break;
+  case 3: //update any todo
+    break;
+  case 4: //show pending todos
+    break;
+  case 5: //show done todos
+    break;
+  default:
+    console.log("Enter a command number");
+    break;
 }
