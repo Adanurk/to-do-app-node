@@ -31,7 +31,6 @@ for (const item of commandList) {
 //entering a command
 
 let input = +prompt("Enter a command number: ");
-console.log(input);
 
 switch (input) {
     case 1: //show to do list
@@ -40,9 +39,16 @@ switch (input) {
     }
     break;
     case 2: //delete any todo
-    let del = +prompt("Enter the number of task you want to delete: ");
-    let deleteTodo = function(num){
-        let ourVal = 
+    let deleteNum = +prompt("Enter the number of task you want to delete: ");
+    let ourTask;
+    for (const item of todoList) {
+        if(item["id"]===deleteNum){
+            ourTask = item;
+        }
+    }
+    // console.log(ourTask); //it gives the object with that id
+    let function1 = function(num){
+        return todoList.filter()
 
     }
 
