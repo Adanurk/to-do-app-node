@@ -69,7 +69,8 @@ let insertTodo = function (str) {
 
 let updateTodo = function (x) {
   //console.log(todoList[x-1]);
-  todoList[x - 1].done = true;
+  let found = todoList.find((element)=> element.id === x);
+  found.done = true;
   return todoList;
 };
 
